@@ -18,7 +18,9 @@ builder.Services.AddCors(options =>
 });
 
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddOpenApi();
 builder.Services.AddSwaggerGen();
+builder.Services.AddControllers();
 
 var app = builder.Build();
 
@@ -32,6 +34,7 @@ app.UseCors("AllowVue");
 app.UseHttpsRedirection();
 
 app.MapGet("/status", () => new { message = "Билбордът на билките работи!", db = "Neon Connected" });
+app.MapControllers();
 
 // Seed Data Logic
 using (var scope = app.Services.CreateScope())
