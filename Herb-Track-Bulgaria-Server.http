@@ -1,0 +1,6 @@
+@Herb_Track_Bulgaria_Server_HostAddress = http://localhost:5179
+
+GET {{Herb_Track_Bulgaria_Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
